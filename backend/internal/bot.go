@@ -443,7 +443,7 @@ func (b *Bot) createIssueFromMessageWithMeta(ctx context.Context, m *tgbotapi.Me
 		}
 	}
 
-	n := rand.Intn(len(issueAccess))
+	n := rand.Intn(len(issueAccess) - 1)
 	b.reply(m.Chat.ID, fmt.Sprintln(issueAccess[n], iss.ID))
 	n = rand.Intn(2)
 	b.API.Send(Stickers[n+4])
