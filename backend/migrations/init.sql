@@ -1,4 +1,4 @@
--- Schema for City Service Bot
+
 create table if not exists users (
     id bigserial primary key,
     tg_user_id bigint unique not null,
@@ -24,8 +24,8 @@ create table if not exists issues (
     latitude double precision,
     longitude double precision,
     status text not null default 'Новая',
-    district text,          -- 👈 новый столбец
-    category text,          -- 👈 новый столбец
+    district text,          
+    category text,          
     created_at timestamptz not null default now(),
     updated_at timestamptz not null default now()
 );
