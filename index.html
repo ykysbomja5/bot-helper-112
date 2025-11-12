@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Центр обращений 112</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-number">112</span>
+      </div>
+
+      <button class="burger" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav">
+        <button class="nav-pill" data-scroll="#top">На главную</button>
+        <button class="nav-pill" data-scroll="#how">Как работает</button>
+        <button class="nav-pill nav-pill-accent" data-scroll="#request">Оставить заявку</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Решаем проблемы<br />вместе</h1>
+          <p class="hero-subtitle">
+            Открытый канал обращений граждан. Быстро, честно,<br />
+            прозрачно. Напишите нам — остальное мы возьмём на себя.
+          </p>
+          <button class="primary-button" data-scroll="#request">
+            Оставить заявку
+          </button>
+        </div>
+
+        <div class="hero-illustration">
+          
+          <img class="img-hero"    src="/static/hero-112.png" alt="Иллюстрация обращения" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <h2 class="section-title">Как это работает?</h2>
+
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-icon">📨</div>
+            <p class="step-text">Вы отправляете сообщение</p>
+          </div>
+          <div class="step-card">
+            <div class="step-icon">⚙️</div>
+            <p class="step-text">Мы передаем службам</p>
+          </div>
+          <div class="step-card">
+            <div class="step-icon">✅</div>
+            <p class="step-text">Вы получаете ответ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="request">
+      <div class="container">
+        <h2 class="section-title">Оставить заявку</h2>
+
+        <div class="request-card">
+          <form class="form" autocomplete="on">
+            <input
+              type="text"
+              name="name"
+              class="field"
+              placeholder="Введите ваше имя"
+              required
+            />
+            <input
+              type="text"
+              name="contact"
+              class="field"
+              placeholder="Ваш телефон или Telegram"
+              required
+            />
+            <label class="field-label">Район города</label>
+            <select name="district" class="field" required>
+              <option value="" disabled selected>Выберите район города</option>
+              <option value="Каменнобродский">Каменнобродский</option>
+              <option value="Жовтневый">Жовтневый</option>
+              <option value="Артемовский">Артемовский</option>
+              <option value="Ленинский">Ленинский</option>
+            </select>
+
+            <label class="field-label">Категория проблемы</label>
+            <select name="category" class="field" required>
+              <option value="" disabled selected>Выберите категорию проблемы</option>
+              <option value="ЖКХ">ЖКХ</option>
+              <option value="Дороги и транспорт">Дороги и транспорт</option>
+              <option value="Благоустройство и экология">Благоустройство и экология</option>
+              <option value="Образование и культура">Образование и культура</option>
+              <option value="Безопасность и правопорядок">Безопасность и правопорядок</option>
+              <option value="Связь и цифровые услуги">Связь и цифровые услуги</option>
+            </select>
+
+            <textarea
+              name="description"
+              class="field field-textarea"
+              placeholder="Подробно опишите вашу проблему"
+              rows="4"
+              required
+            ></textarea>
+
+            <div class="attachments-group">
+              <label class="attachments-label">Фото и видео (по желанию)</label>
+              <input
+                type="file"
+                name="attachments"
+                class="field field-file"
+                accept="image/*,video/*"
+                multiple
+              />
+              <p class="attachments-hint">
+                Можно прикрепить несколько файлов: скриншоты, фото с места, короткое видео.
+              </p>
+            </div>
+
+            <div class="geo-row">
+              <div class="geo-main">
+                <label class="attachments-label">Геолокация (по желанию)</label>
+                <button
+                  type="button"
+                  class="geo-button"
+                  id="geoButton"
+                  data-default-label="📍 Определить местоположение"
+                >
+                  📍 Определить местоположение
+                </button>
+              </div>
+              <input
+                type="text"
+                name="location"
+                class="field geo-display"
+                placeholder="Координаты не добавлены"
+                readonly
+              />
+              <input type="hidden" name="latitude" />
+              <input type="hidden" name="longitude" />
+            </div>
+
+
+            <button type="submit" class="submit-button">
+              <span class="submit-label">Отправить заявку</span>
+              <span class="submit-check">✔</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© Центр обращений 112</p>
+    </div>
+  </footer>
+</body>
+</html>
