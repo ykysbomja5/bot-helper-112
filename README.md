@@ -58,17 +58,26 @@
 
 5. Откройте в браузере:
    - Сайт: [http://localhost:9098/](http://localhost:9098/)
-   - Админ‑панель: [http://localhost:9098/admin-panel/](http://localhost:9098/admin-panel/)
-   - Проверка сервера: [http://localhost:9098/healthz](http://localhost:9098/healthz)
+   - Админ‑панель: [http://localhost:9098/admin-panel/](http://localhost:9098/admin/)
 
 ---
 
 ## 🧩 Структура проекта
 
 ```
-backend/
+project-root/
+│
 ├── cmd/
 │   └── main.go
+│
+├── frontend/
+│   ├── admin.html
+│   ├── admin.js
+│   ├── hero-112.png
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
 ├── internal/
 │   ├── bot.go
 │   ├── config.go
@@ -76,17 +85,16 @@ backend/
 │   ├── models.go
 │   ├── services.go
 │   └── web.go
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-├── admin_panel/
-│   ├── index.html
-│   ├── admin.css
-│   └── admin.js
+│
 ├── migrations/
 │   └── init.sql
-└── .env
+│
+├── uploads/
+│
+├── .env
+├── go.mod
+├── go.sum
+└── icon.jpg
 ```
 
 ---
